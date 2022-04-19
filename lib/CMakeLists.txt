@@ -9,11 +9,9 @@ set(CMAKE_C_STANDARD 99)
 # target_compile_features(${PROJECT_NAME} PUBLIC c_std_99)
 set(CMAKE_C_EXTENSIONS OFF)
 
-find_package(OpenMP)
-
-include_directories(include)
-
 add_library(${PROJECT_NAME} src/pont.c)
+
+find_package(OpenMP)
 target_link_libraries(${PROJECT_NAME} PUBLIC OpenMP::OpenMP_C)
 
 target_include_directories(${PROJECT_NAME}
