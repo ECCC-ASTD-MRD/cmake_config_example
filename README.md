@@ -11,9 +11,9 @@ installation folder can be moved and other than building the client with the
 updated library install path, no changes are necessary).
 
 
-== Build and exectution instructions ==
+# Build and exectution instructions
 
-=== Build the lib ===
+## Build the lib
 ```
 cd lib
 mkdir build && cd $_
@@ -22,7 +22,7 @@ mkdir build && cd $_
 cmake .. -DCMAKE_INSTALL_PREFIX=../install -DWITH_OPENMP=TRUE && make install
 ```
 
-=== Build the client app ===
+## Build the client app
 
 From the root of the project:
 ```
@@ -31,7 +31,7 @@ mkdir build && cd $_
 cmake .. -Dpont_ROOT=../../lib/install && make
 ```
 
-=== Running the client ===
+## Running the client
 In the client's build folder:
 ```
 ./client
