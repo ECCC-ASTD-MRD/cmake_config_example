@@ -10,11 +10,6 @@ if(@OpenMP_FOUND@)
     find_dependency(OpenMP)
 
     target_link_libraries(${CMAKE_FIND_PACKAGE_NAME}::${CMAKE_FIND_PACKAGE_NAME} INTERFACE OpenMP::OpenMP_C)
-
-    # The code below works, but target_link_libraries(...) is cleaner
-    # set_target_properties(${CMAKE_FIND_PACKAGE_NAME}::${CMAKE_FIND_PACKAGE_NAME}
-    #     PROPERTIES
-    #         INTERFACE_LINK_OPTIONS ${OpenMP_C_FLAGS})
 endif()
 
 check_required_components(${CMAKE_FIND_PACKAGE_NAME})
