@@ -11,8 +11,10 @@ set(CMAKE_C_EXTENSIONS OFF)
 
 add_library(${PROJECT_NAME} src/pont.c)
 
-find_package(OpenMP)
-target_link_libraries(${PROJECT_NAME} PUBLIC OpenMP::OpenMP_C)
+if(WITH_OPENMP)
+    find_package(OpenMP)
+    target_link_libraries(${PROJECT_NAME} PUBLIC OpenMP::OpenMP_C)
+endif()
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC
