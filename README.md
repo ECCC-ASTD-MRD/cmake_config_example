@@ -10,6 +10,11 @@ Furthermore this example shows how to make a relocatable CMake package (the
 installation folder can be moved and other than building the client with the
 updated library install path, no changes are necessary).
 
+The library should be usable both when installed or directly included in
+another CMake project.  To achieve this, an ALIAS such as `pont::pont` must be
+added in the library's CMakeLists.txt file.  Client apps should only use the
+namespace qualified target regardless of if they use it installed or embedded.
+
 
 # Build and exectution instructions
 
